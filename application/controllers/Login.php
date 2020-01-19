@@ -23,11 +23,11 @@ class Login extends CI_Controller {
         $cek = $this->m_login->cek_login($where);
         if($cek->num_rows() != 0){
             $data = $cek->row();
-            if($data->id_level = '1'){
+            if($data->id_level == 1){
                 echo "halaman admin";
-            }elseif($data->id_level = '2'){
+            }elseif($data->id_level == 2){
                 echo "halaman pegawai";
-            }elseif($data->id_level = '3'){
+            }elseif($data->id_level == 3){
                 echo "halaman peminjam";
             }
         }else{
